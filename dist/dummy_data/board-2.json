@@ -1,0 +1,38 @@
+{
+    "id": 2,
+    "backgroundImage": null,
+    "type": "custom",
+    "cols": [
+        {
+            "id": 1,
+            "title": "New",
+            "icon": "fiber_new"
+        },
+        {
+            "id": 2,
+            "title": "Open",
+            "icon": "play_circle_filled"
+        },
+        {
+            "id": 3,
+            "title": "Needs Info",
+            "icon": "error"
+        },
+        {
+            "id": 4,
+            "title": "On Hold",
+            "icon": "pause_circle_filled"
+        },
+        {
+            "id": 5,
+            "title": "Verify",
+            "icon": "room_service"
+        },
+        {
+            "id": 6,
+            "title": "Complete",
+            "icon": "check_circle"
+        }
+    ],
+    "cards": []
+}

@@ -1,0 +1,173 @@
+.Timeline {
+    width: 300px;
+    position: relative;
+    transition: width 300ms;
+
+    .icon-button {
+        display: inline-block;
+        vertical-align: top;
+        width: 26px;
+        height: 100%;
+        overflow: hidden;
+        text-align: center;
+        background-color: @primary-background;
+        color: @secondary-text;
+        border-right: 1px solid @border-color;
+        cursor: pointer;
+        user-select: none;
+
+        .material-icons {
+            font-size: 20px;
+            line-height: 32px;
+            width: 100%;
+        }
+
+
+        ///////states
+        &:hover {
+            background-color: @hover-color;
+            color: @primary-color;
+        }
+        &.expanded {
+            .material-icons {
+                transform: rotate(90deg);
+            }
+        }
+        &.invisible {
+            visibility: hidden;
+        }
+        &.toggled {
+            background-color: @border-color;
+            color: @primary-color;
+            border-radius: 2px;
+        }
+
+
+        ///////icon types
+        &.toggle {
+            .material-icons {
+                font-size: 26px;
+            }
+        }
+        &.board {
+            .material-icons {
+                margin-top: 0;
+            }
+        }
+        &.status {
+            float: left;
+        }
+    }
+
+    .top-bar {
+        width: 100%;
+        font-weight: bold;
+        line-height: 32px;
+        height: 32px;
+        border-bottom: 1px solid @border-color;
+
+        span {
+            padding-left: 8px;
+        }
+
+        .days, .date {
+            float: right;
+            display: none;
+            padding: 0 8px;
+        }
+        .days {
+            min-width: 40px;
+        }
+        .date {
+            min-width: 80px;
+        }
+
+        .icon-button.edit {
+            border-top: 1px solid @border-color;
+            margin-top: -1px;
+            height: 32px;
+        }
+    }
+
+    &.expanded {
+        width: 600px;
+
+        .top-bar {
+            .days, .date {
+                display: inline-block;
+            }
+        }
+
+        .infinite-tree {
+            .days, .date {
+                display: inline-block;
+            }
+        }
+    }
+
+    &.editing {
+        width: 700px;
+
+        .infinite-tree {
+            .edit-buttons {
+                display: inline-block;
+            }
+        }
+    }
+
+    .infinite-tree {
+        background-color: @secondary-background;
+
+        &:focus {
+            outline: none;
+        }
+
+        .tree-item {
+            width: 100%;
+            height: 32px;
+            border-bottom: 1px solid @border-color;
+            background-color: @secondary-background;
+
+            .tree-node {
+                background-color: @primary-background;
+                overflow: hidden;
+                height: 100%;
+                position: relative;
+                border-left: 1px solid @border-color;
+            }
+        }
+
+        .item-title {
+            padding: 0 8px;
+            background-color: @primary-background;
+            height: 100%;
+            line-height: 32px;
+        }
+
+        .days, .date {
+            display: none;
+            float: right;
+            height: 100%;
+            vertical-align: middle;
+            border-left: 1px solid @border-color;
+            line-height: 32px;
+            padding: 0 8px;
+            min-width: 40px;
+        }
+        .date {
+            min-width: 80px;
+        }
+
+        .edit-buttons {
+            display: none;
+            float: right;
+            vertical-align: middle;
+            margin-right: -1px;
+            border-left: 1px solid @border-color;
+
+            .icon-button {
+                color: @primary-color;
+            }
+        }
+    }
+}

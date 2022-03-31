@@ -1,0 +1,64 @@
+.BoardFilters.board-view {
+    width: 460px;
+    position: absolute;
+    right: 68px;
+    top: 46px;
+    background-color: @primary-background;
+    border-radius: 6px;
+    padding: 6px 12px;
+    border: 1px solid @secondary-text;
+
+    .filter-item {
+        display: inline-block;
+        vertical-align: top;
+        width: 50%;
+        margin-bottom: 6px;
+
+        input, select {
+            max-width: 100%;
+        }
+
+        label {
+            margin-top: 0;
+            margin-bottom: 2px;
+        }
+    }
+}
+
+.BoardFilters.list-view {
+    @filter-height: 120px;   //should match in ListView and BoardFilters
+    @padding-left: 40px;     //should match in ListView and BoardFilters
+
+    position: absolute;
+    top: 0;
+    left: @padding-left;
+    width: calc(100% - @padding-left);
+    height: @filter-height;
+    padding: 6px 12px;
+    background-color: @secondary-background;
+    border-bottom: 1px solid @border-color;
+
+    .filter-item {
+        display: inline-block;
+        vertical-align: top;
+        width: 33%;
+        margin-bottom: 6px;
+
+        input, select {
+            max-width: 100%;
+        }
+
+        label {
+            margin-top: 0;
+            margin-bottom: 2px;
+        }
+
+        &.short {
+            width: (33% / 2);
+
+            input, select {
+                min-width: 0;
+            }
+        }
+    }
+}

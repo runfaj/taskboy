@@ -1,0 +1,97 @@
+.ListView {
+    height: 100%;
+    position: relative;
+    width: 100%;
+
+    .list-area, .preview-area {
+        width: calc(50% - 20px);
+        display: inline-block;
+        vertical-align: top;
+        height: 100%;
+        position: relative;
+    }
+
+    .list-area {
+        @filter-height: 120px;   //should match in ListView and BoardFilters
+        @padding-left: 40px;     //should match in ListView and BoardFilters
+
+        margin-right: 40px;
+        padding-top: @filter-height;
+        padding-left: @padding-left;
+
+        .list-container {
+            width: 100%;
+            position: relative;
+            height: 100%;
+            overflow: auto;
+        }
+
+        .list {
+            display: block;
+            margin: 0;
+            padding: 0;
+
+            h2 {
+                padding: 10px;
+                padding-bottom: 8px;
+                background-color: @secondary-background;
+            }
+
+            .add-btn {
+                float: right;
+                padding: 1px 7px 0 7px;
+                margin-top: -4px;
+            }
+
+            .drop-zone {
+                background-color: @primary-background;
+                margin: 0;
+            }
+        }
+
+        .list-drag {
+            cursor: pointer;
+        }
+
+        .list-item:last-child {
+            .Card {
+                border-bottom: none;
+            }
+        }
+    }
+
+    .preview-area {
+        .CardModal {
+            position: relative;
+            height: 100%;
+            width: 100%;
+
+            & > .card-modal {
+                position: relative;
+                z-index: 1;
+                top: auto;
+                left: auto;
+
+                .modal-overlay {
+                    display: none;
+                }
+
+                .modal-inner {
+                    width: 100%;
+                    min-height: 300px;
+                    max-height: 100%;
+                    top: 0;
+                    border-radius: 0;
+                    left: 0;
+                    transform: none;
+                    z-index: 1;
+                }
+
+                .modal-close {
+                    right: 10px;
+                    top: 7px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,132 @@
+{
+    "id": 1,
+    "nodes": [
+        {
+            "children": [
+                {
+                    "end_date": "2017-10-03",
+                    "id": "1.1",
+                    "name": "Engagement meeting",
+                    "start_date": "2017-10-03",
+                    "status": {
+                        "label": "complete",
+                        "icon": "done"
+                    }
+                }
+            ],
+            "end_date": "2017-10-08",
+            "id": "1",
+            "name": "Project Initiation",
+            "start_date": "2017-10-01",
+            "status": {
+                "label": "complete",
+                "icon": "done"
+            }
+        },
+        {
+            "end_date": "2017-10-04",
+            "id": "2",
+            "name": "Pizza Party",
+            "start_date": "2017-10-04",
+            "status": {
+                "label": "complete",
+                "icon": "done"
+            }
+        },
+        {
+            "end_date": "2017-10-31",
+            "id": "3",
+            "name": "Design",
+            "start_date": "2017-10-01"
+        },
+        {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "end_date": "2017-11-05",
+                            "id": "4.1.1",
+                            "name": "Script Development",
+                            "start_date": "2017-11-01"
+                        },
+                        {
+                            "board": "1",
+                            "end_date": "2017-11-20",
+                            "id": "4.1.2",
+                            "name": "Course Development",
+                            "start_date": "2017-11-06"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "end_date": "2017-11-22",
+                                    "id": "4.1.3.1",
+                                    "name": "Allen First Version",
+                                    "start_date": "2017-11-20"
+                                },
+                                {
+                                    "end_date": "2017-11-24",
+                                    "id": "4.1.3.2",
+                                    "name": "Client Review",
+                                    "start_date": "2017-11-22"
+                                },
+                                {
+                                    "end_date": "2017-11-24",
+                                    "id": "4.1.3.3",
+                                    "name": "Allen Finalize",
+                                    "start_date": "2017-11-24"
+                                }
+                            ],
+                            "end_date": "2017-11-24",
+                            "id": "4.1.3",
+                            "name": "Media Development",
+                            "start_date": "2017-11-20"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "end_date": "2017-11-24",
+                                    "id": "4.1.4.1",
+                                    "name": "LMS Package",
+                                    "start_date": "2017-11-24"
+                                },
+                                {
+                                    "board": "2",
+                                    "end_date": "2017-11-29",
+                                    "id": "4.1.4.2",
+                                    "name": "Testing and Fixes",
+                                    "start_date": "2017-11-25"
+                                },
+                                {
+                                    "end_date": "2017-11-30",
+                                    "id": "4.1.4.3",
+                                    "name": "Final Course Delivery",
+                                    "start_date": "2017-11-30"
+                                }
+                            ],
+                            "end_date": "2017-11-30",
+                            "id": "4.1.4",
+                            "name": "Final Delivery",
+                            "start_date": "2017-11-24"
+                        }
+                    ],
+                    "end_date": "2017-11-30",
+                    "id": "4.1",
+                    "name": "WBT",
+                    "start_date": "2017-11-01"
+                },
+                {
+                    "board": "3",
+                    "end_date": "2017-11-30",
+                    "id": "4.2",
+                    "name": "ILT",
+                    "start_date": "2017-11-20"
+                }
+            ],
+            "end_date": "2017-11-30",
+            "id": "4",
+            "name": "Training",
+            "start_date": "2017-11-01"
+        }
+    ]
+}

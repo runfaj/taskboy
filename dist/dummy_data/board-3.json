@@ -1,0 +1,147 @@
+{
+    "id": 3,
+    "backgroundImage": null,
+    "type": "custom",
+    "cols": [
+        {
+            "id": 1,
+            "title": "New",
+            "icon": "fiber_new"
+        },
+        {
+            "id": 2,
+            "title": "Open",
+            "icon": "play_circle_filled"
+        },
+        {
+            "id": 3,
+            "title": "Needs Info",
+            "icon": "error"
+        },
+        {
+            "id": 4,
+            "title": "On Hold",
+            "icon": "pause_circle_filled"
+        },
+        {
+            "id": 5,
+            "title": "Verify",
+            "icon": "room_service"
+        },
+        {
+            "id": 6,
+            "title": "Complete",
+            "icon": "check_circle"
+        }
+    ],
+    "cards": [
+        {
+            "orderIndex": 0,
+            "cardId": 0,
+            "colId": 2,
+            "group": {
+                "id": 12345678,
+                "type": "programmer",
+                "name": "Programmer",
+                "color": "rgba(0, 65, 247, .5)"
+            },
+            "attachments": [
+                {
+                    "name": "some attachment",
+                    "file": "/allen-background.png",
+                    "type": "image",
+                    "thumb": "/allen-background.png"
+                },
+                {
+                    "name": "some attachment",
+                    "file": "/allen-background.png",
+                    "type": "image",
+                    "thumb": "/allen-background.png"
+                }
+            ],
+            "checklists": [
+                {
+                    "title": "Some Sample Checklist",
+                    "items": [
+                        {
+                            "text": "item 1",
+                            "completed": true
+                        },
+                        {
+                            "text": "item 2",
+                            "completed": false
+                        },
+                        {
+                            "text": "item 3",
+                            "completed": false
+                        }
+                    ]
+                }
+            ],
+            "description": "Accordian carat needs to be black",
+            "title": "The second Accordian carat needs to be black and positioned left",
+            "due": "2017-10-11T00:00:00",
+            "deviceInfo": "Some information about <br>devices<br><br>and such",
+            "activityInfo": "Some information about <br>the activity<br><br>and such",
+            "status": {
+                "created": {
+                    "stamp": "2017-10-09T00:00:00",
+                    "user": {
+                        "id": 1234567,
+                        "name": "Bob Jones",
+                        "email": "bob@jones.com",
+                        "thumb": "http://woodlibrary.org/wp-content/uploads/2011/04/lego-head.jpg"
+                    }
+                },
+                "fixed": {
+                    "stamp": "2017-10-10T00:00:00",
+                    "user": {
+                        "id": 1234567,
+                        "name": "Bob Jones",
+                        "email": "bob@jones.com",
+                        "thumb": "http://woodlibrary.org/wp-content/uploads/2011/04/lego-head.jpg"
+                    }
+                },
+                "verified": null,
+                "completed": null
+            },
+            "comments": [
+                {
+                    "comment_id": 1234567,
+                    "user": {
+                        "id": 1234567,
+                        "name": "Bob Jones",
+                        "email": "bob@jones.com",
+                        "thumb": "http://woodlibrary.org/wp-content/uploads/2011/04/lego-head.jpg"
+                    },
+                    "stamp": "2017-10-10T00:00:00",
+                    "comment": "Here is a comment<br><br>Cool beans"
+                },
+                {
+                    "comment_id": 1234567,
+                    "user": {
+                        "id": 1234567,
+                        "name": "Jane Jones",
+                        "thumb": "",
+                        "email": "jane@jones.com"
+                    },
+                    "stamp": "2017-10-09T00:00:00",
+                    "comment": "Here is another comment."
+                }
+            ],
+            "clientVisible": true,
+            "age": 1,
+            "assignedTo": [
+                {
+                    "id": 1234567,
+                    "name": "Bob Jones",
+                    "email": "bob@jones.com",
+                    "thumb": "http://woodlibrary.org/wp-content/uploads/2011/04/lego-head.jpg"
+                }
+            ],
+            "notifications": 2,
+            "notificationsRead": true,
+            "needsInfo": false
+        }
+    ]
+}

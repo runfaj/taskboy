@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css?family=Oxygen');
+
+div {
+    color: black;
+}
+
+/************** themes **************/
+@numThemes: 2;
+//light
+.themeVars(1) {
+    @hover-color: #fefefe;
+    @primary-color: #0c639e;
+    @primary-background: #fff;
+    @secondary-background: #eee;
+    @darker-background: #ccc;
+    @border-color: #ccc;
+    @secondary-text: #777;
+    @warning-color: #ff5000;
+    @default-background-image: '/Taskboy_dark grey_BKgrnd.jpg';
+}
+//dark
+.themeVars(2) {
+    @hover-color: red;
+    @primary-color: #0c639e;
+    @primary-background: #fff;
+    @secondary-background: #eee;
+    @darker-background: #ccc;
+    @border-color: #ccc;
+    @secondary-text: #777;
+    @warning-color: #ff5000;
+    @default-background-image: '/Taskboy_dark grey_BKgrnd.jpg';
+}
+
+.buildThemes(@i, @n) when (@i < (@n + 1)) {
+    .theme-@{i} {
+        .themeVars(@i);
+        .appSetup();
+    }
+
+    .buildThemes((@i + 1), @n);
+}
+.buildThemes(1, @numThemes);
+/******************** end themes *****************/
+
+.appSetup() {
+    &.App {
+        /******************** imports ************************/
+        @import './Board.less';
+        @import './BoardFilters.less';
+        @import './Card.less';
+        @import './CardModal.less';
+        @import './ColumnView.less';
+        @import './ListView.less';
+        @import './Modal.less';
+        @import './Timeline.less';
+        @import './TimelineModal.less';
+
+        /****************** app container styles ********************/
+        position: relative;
+        width: 100%;
+        height: 100%;
+
+        font-family: 'Oxygen', sans-serif;
+        font-size: 13px;
+        background-size: cover;
+        background-position: bottom right;
+        background-repeat: no-repeat;
+        background-image: url(@default-background-image);
+
+        /****************** scrollbar styles ****************/
+        /**some scrollbar extras**/
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            //border-radius: 6px;
+            border: 1px solid @secondary-background;
+            background: @primary-background;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            border-radius: 6px;
+            background: @darker-background;
+        }
+
+        /******************** global styles *******************/
+        h1, h2, h3 {
+            margin: 0;
+            padding: 0;
+        }
+
+        label {
+            display: block;
+            margin-top: 20px;
+            margin-bottom: 4px;
+        }
+
+        input[type=text], input[type=password], input[type=number], select {
+            padding: 6px;
+            min-width: 200px;
+            border: 1px solid @secondary-text;
+            background-color: @primary-background;
+        }
+        textarea {
+            font-family: inherit;
+            padding: 6px;
+            min-width: 240px;
+            min-height: 130px;
+            border: 1px solid @secondary-text;
+            background-color: @primary-background;
+        }
+
+        /** custom class styles **/
+
+        .button {
+            outline: none;
+            user-select: none;
+            padding: 6px 20px;
+            border-radius: 3px;
+            cursor: pointer;
+
+            &.disabled, &:disabled {
+                background-color: @hover-color !important;
+                color: @border-color !important;
+                cursor: default;
+            }
+
+            &.selected {
+                background-color: @darker-background !important;
+            }
+
+            //default
+            border: 1px solid @border-color;
+            background-color: @primary-background;
+            &:hover {
+                background-color: #efefef;
+                color: @primary-color;
+
+                &:active {
+                    border-color: @primary-color;
+                }
+            }
+
+            &.primary {
+                border: 1px solid @primary-color;
+                background-color: @primary-color;
+                color: @primary-background;
+
+                &:hover {
+                    background-color: darken(@primary-color, 5%);
+
+                    &:active {
+                        background-color: darken(@primary-color, 10%);
+                    }
+                }
+            }
+        }
+        .clearfix:before,
+        .clearfix:after {
+          content: "";
+          display: table;
+        }
+        .clearfix:after {
+          clear: both;
+        }
+        .clearfix {
+          zoom: 1; /* For IE 6/7 (trigger hasLayout) */
+        }
+
+        /****************** child styles ********************/
+        .app-sidebar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 994;
+            max-width: 800px;
+            transition: max-width 500ms;
+            border-right:1px solid @border-color;
+            background-color: @primary-background;
+
+            .sidebar-content {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+            }
+
+            &.collapsed {
+                max-width: 0;
+
+                .sidebar-toggle {
+                    border-bottom-right-radius: 4px;
+
+                    .material-icons {
+                        transform: rotate(180deg);
+                        line-height: 34px;
+                    }
+                }
+
+                .expand-button {
+                    display: none;
+                }
+            }
+
+            .sidebar-toggle, .expand-button {
+                @size: 38px;
+
+                position: absolute;
+                top: 24px;
+                left: 100%;
+                width: @size;
+                height: @size;
+                border: 1px solid @border-color;
+                background-color: @primary-background;
+                cursor: pointer;
+
+                .material-icons {
+                    font-size: (@size - 2px);
+                    width: @size;
+                    line-height: @size;
+                    transition: all 500ms;
+                }
+
+                &:hover {
+                    background-color: @hover-color;
+                    color: @primary-color;
+                }
+            }
+
+            .sidebar-toggle {
+                border-top-right-radius: 4px;
+            }
+
+            .expand-button {
+                top: 60px;
+                border-bottom-right-radius: 4px;
+            }
+        }
+
+        .app-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.6);
+            opacity: 0;
+            transition: opacity 500ms;
+            z-index: 993;
+        }
+
+        .app-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .board-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background-color: @secondary-text;
+        }
+    }
+}
